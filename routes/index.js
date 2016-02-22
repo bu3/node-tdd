@@ -1,17 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var fooService = require('../services/foo-service')
-var fooClient = require('../services/foo-client')
+var team = require('../services/team')
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
-
-  fooService.init(fooClient);
-  fooService.count(function (results){
-    console.log(results);
-  });
-
-  res.render('index', { title: 'Express2' });
+  res.render('index', { title: 'A.S.Roma players championship 2000/2001', players: team.getTeam() });
 });
 
 module.exports = router;

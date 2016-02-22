@@ -1,8 +1,7 @@
-var User = require('./user');
+var player = require('./player');
 
-function getTeam(teamId) {
-    //console.log(User);
-    return User.find({teamId: teamId});
+function getTeam() {
+    return player.find();
 }
 
 module.exports.getTeam = getTeam;
