@@ -1,25 +1,31 @@
 var expect = require('chai').expect;
 var SandboxedModule = require('sandboxed-module');
-
+var Promise = require('bluebird');
 
 describe('Team Service', function () {
-    var team;
-    var users = ['',''];
+  var team;
+  var users = ['', ''];
 
-    beforeEach(function () {
-        team = SandboxedModule.require('../../services/team', {
-            requires: {
-                "./player": { find: function(){
-                    return users;
-                }}
-            }
-        });
+  beforeEach(function () {
+    team = SandboxedModule.require('../../services/team', {
+      requires: {
+        "./player": {
+          find: function () {
+            return users;
+          }
+        }
+      }
     });
 
-    it('returns a list of users', function (done) {
+    Promise.promisifyAll(team);
+  });
 
-        team = team.getTeam();
-        expect(team).to.eql(users);
-        done();
+  it('returns a list of users', function (done) {
+
+    team.getTeamAsync().then(function (team) {
+      expect(team).to.eql(users);
+      done();
     });
+
+  });
 });
