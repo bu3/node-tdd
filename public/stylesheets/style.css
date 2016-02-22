@@ -1,8 +1,9 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    opacity: 0.9;
+    background: url('../images/lupetto.jpg') no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-a {
-  color: #00B7FF;
-}
+
