@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha tests/unit/**/*[T,t]est.js"
+    "test": "mocha tests/unit/**/*[T,t]est.js && ./ui_tests.sh"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
