@@ -1,0 +1,4 @@
+---
+applications:
+- name: node-tdd
+  command: PORT=$PORT node ./bin/www
