@@ -33,8 +33,8 @@ describe('Football Data Service', function () {
         'node-rest-client': {
           Client: function(){
             return {
-              get: function (url, callback) {
-                callback(null, response);
+              get: function (url, args, callback) {
+                callback(response, null);
               }
             };
           }

@@ -7,7 +7,5 @@ Scenario('Index page shows Roma players', function (I) {
   I.seeInTitle('A.S.Roma players championship 2000/2001');
 
   I.see('Francesco Totti');
-  I.see('Vincenzo Montella');
-  I.see('Gabriel Batistuta');
 
 });
