@@ -39,9 +39,12 @@ describe('Football Data Parser', function () {
 
     var players = parser.parsePlayers(response);
     expect(players.length).to.equal(2);
-    expect(players[0]).to.eql('John Doe');
-    expect(players[1]).to.eql('Will Smith');
-
+    expect(players[0].name).to.eql('John Doe');
+    expect(players[0].position).to.eql('Centre Back');
+    expect(players[0].jerseyNumber).to.eql(12);
+    expect(players[0].dateOfBirth).to.eql("1987-02-11");
+    expect(players[0].nationality).to.eql("Bosnia-Herzegovina");
+    expect(players[0].contractUntil).to.eql("2016-06-30");
+    expect(players[0].marketValue).to.eql("4,000,000 €");
   });
-
 });

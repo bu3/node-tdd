@@ -45,7 +45,7 @@ describe('Football Data Service', function () {
     var observable = footballService.getTeam();
     observable.subscribe(
       function (players) {
-        expect(players).to.eql([response.players[0].name]);
+        expect(players[0].name).to.eql(response.players[0].name);
         done();
       });
   });
